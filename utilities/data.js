@@ -2,6 +2,7 @@ const data = {
   products: [
     {
       name: 'Product #1',
+      slug: 'product1',
       category: 'Skincare',
       image: '/images/mockup.png',
       price: 20,
@@ -12,6 +13,7 @@ const data = {
     },
     {
       name: 'Product #2',
+      slug: 'product2',
       category: 'Skincare',
       image: '/images/mockup.png',
       price: 21,
@@ -22,6 +24,7 @@ const data = {
     },
     {
       name: 'Product #3',
+      slug: 'product3',
       category: 'Skincare',
       image: '/images/mockup.png',
       price: 22,
@@ -32,6 +35,7 @@ const data = {
     },
     {
       name: 'Product #4',
+      slug: 'product4',
       category: 'Skincare',
       image: '/images/mockup.png',
       price: 23,
@@ -42,6 +46,7 @@ const data = {
     },
     {
       name: 'Product #5',
+      slug: 'product5',
       category: 'Skincare',
       image: '/images/mockup.png',
       price: 24,
@@ -52,6 +57,7 @@ const data = {
     },
     {
       name: 'Product #6',
+      slug: 'product6',
       category: 'Haircare',
       image: '/images/mockup.png',
       price: 25,
@@ -62,6 +68,7 @@ const data = {
     },
     {
       name: 'Product #7',
+      slug: 'product7',
       category: 'Haircare',
       image: '/images/mockup.png',
       price: 26,
@@ -72,6 +79,7 @@ const data = {
     },
     {
       name: 'Product #8',
+      slug: 'product8',
       category: 'Haircare',
       image: '/images/mockup.png',
       price: 27,
@@ -82,6 +90,7 @@ const data = {
     },
     {
       name: 'Product #9',
+      slug: 'product9',
       category: 'Haircare',
       image: '/images/mockup.png',
       price: 28,
