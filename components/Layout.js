@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Head from 'next/head';
 import NextLink from 'next/link';
-import { AppBar, Toolbar, Typography, Container, Link, createMuiTheme, ThemeProvider, CssBaseline, } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, Container, Link, createMuiTheme, ThemeProvider, CssBaseline, Switch } from '@material-ui/core';
 import useStyles from '../utilities/styles.js';
+import { Store } from '../utilities/Store';
+import Cookies from 'js-cookie';
 
 export default function Layout({ title, description, children }) {
+  const { state, dispatch } = useContext(Store);
+  const { darkMode } = state;
   const theme = createMuiTheme({
     typography: {
       fontSize: '1.6rem',
@@ -17,13 +21,21 @@ export default function Layout({ title, description, children }) {
       margin : '1rem 0',
     },
     palette: {
-      type: 'light',
+      type: darkMode ? 'dark' : 'light',
       primary: {
-        main: '#208080',
+        main: '#bfac5c',
       },
+      secondary: {
+        main: '#0d0019'
+      }
     },
   });
   const classes = useStyles();
+  const darkModeChangeHandler = () => {
+    dispatch({ type: darkMode ? 'DARK_MODE_OFF' : 'DARK_MODE_ON'});
+    const newDarkMode = !darkMode;
+    Cookies.set('darkMode', newDarkMode ? 'ON' : 'OFF');
+  };
   return (
     <div>
       <Head>
@@ -36,11 +48,15 @@ export default function Layout({ title, description, children }) {
           <Toolbar>
             <NextLink href="/" passHref>
               <Link>
-                <Typography className={classes.brand}>Keep it Classy</Typography>
+                <Typography className={classes.brand}>KEEP IT CLASSY</Typography>
               </Link>
             </NextLink>
             <div className={classes.grow}></div>
             <div>
+              <Switch
+                checked={darkMode}
+                onChange={darkModeChangeHandler}
+                ></Switch>
               <NextLink href="/cart" passHref>
                 <Link>Cart</Link>
               </NextLink>
